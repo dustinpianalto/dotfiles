@@ -13,7 +13,7 @@ sudo apt install terminator -y
 
 sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev git
 
-curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /usr/bin/zsh
+[[ ! -d "~/.pyenv" ]] && curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /usr/bin/zsh
 
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
