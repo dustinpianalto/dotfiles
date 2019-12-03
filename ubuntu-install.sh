@@ -6,11 +6,17 @@
 # as the Nerd Fonts will need to download and they are over 2GB in size.      #
 ###############################################################################
 
+sudo apt update
+
 # Install Terminator
 sudo apt install terminator -y
 
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev git
+
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /usr/bin/zsh
+
 # Install NeoVim and dependants
-sudo apt install neovim pyenv exuberant-ctags git ack-grep -y
+sudo apt install neovim exuberant-ctags git ack-grep -y
 pyenv install 3.8.0
 pyenv local 3.8.0
 pip install neovim pep8 flake8 pyflakes pylint isort black
