@@ -27,6 +27,7 @@ pip install neovim pep8 flake8 pyflakes pylint isort black
 
 # Download and install oh-my-zsh
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | /usr/bin/zsh
+source $HOME/.zshrc
 # Download PowerLevel10K and put it in the custom theme directory for oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
