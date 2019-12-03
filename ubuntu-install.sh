@@ -15,6 +15,10 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /usr/bin/zsh
 
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Install NeoVim and dependants
 sudo apt install neovim exuberant-ctags git ack-grep -y
 pyenv install 3.8.0
