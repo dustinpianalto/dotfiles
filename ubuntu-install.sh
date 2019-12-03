@@ -26,7 +26,7 @@ pyenv local 3.8.0
 pip install neovim pep8 flake8 pyflakes pylint isort black
 
 # Download and install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | /usr/bin/zsh
 # Download PowerLevel10K and put it in the custom theme directory for oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
