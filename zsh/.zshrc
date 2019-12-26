@@ -121,8 +121,14 @@ alias ls='lsd --group-dirs first'
 alias ll='lsd --group-dirs first -la'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias xclip='xclip -selection c'
+alias maim-clip="maim -s -f png | copyq copy image/png -"
+alias maim-window="maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage $HOME/Media/Pictures/Screenshots/$(date -Ins).png"
+alias maim-color="maim -st 0 | convert - -resize 1x1\! -format '%[pixel:p{0,0}]' info:-"
+alias maim-fullscreen="maim -f png | copyq copy image/png -"
+alias maim-clip-file="maim -s -f png $HOME/Media/Pictures/Screenshots/$(date -Ins).png"
 
 export VISUAL=vim
 export EDITOR=$VISUAL
