@@ -1,0 +1,81 @@
+# Fix issue with git plugin
+autoload -U +X compinit && compinit
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/code/Projects/Golang/bin:$HOME/go/go1.14.2/bin:$HOME/code/Bin:$HOME/.cargo/bin:$HOME/scripts:$HOME/.gem/ruby/2.7.0/gems:/usr/local/bin:$PATH
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/plugins.zsh
+source $HOME/.config/zsh/themes.zsh
+
+export VISUAL=vim
+export EDITOR=$VISUAL
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+bindkey '^`' autosuggest-clear
+bindkey -v
+
+# ------ ZSH Settings -----
+
+unsetopt NO_BEEP
+unsetopt NO_MATCH
+setopt AUTO_CD
+setopt BEEP
+setopt NOMATCH
+setopt NOTIFY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt HIST_BEEP
+setopt INTERACTIVE_COMMENTS
+setopt MAGIC_EQUAL_SUBST
+
+HISTFILE="$HOME/.zsh_history"
+HIST_STAMPS=yyyy-mm-dd
+HISTSIZE=5000
+SAVEHIST=5000
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#ccc'
+ZLE_RPROMPT_INDENT=0
+
+source $HOME/.config/zsh/spaceship.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export OPENCV_LOG_LEVEL=ERROR
+
+# For BriteDevEnv...
+function load_britedevenv() {
+    # Activate direnv, which will pick up the `.envrc`.
+    eval "$(direnv hook zsh)"
+
+    # Since 'docker-compose' will now be working across multiple repositories,
+    # we'll export a ENV variable that it can read to figure out where all our
+    # repos are checked out at.
+    export REPO_DIR="~/code/IWS"
+
+    export BRITEDEVENV_PATH="/home/dustyp/code/IWS/BriteDevEnv"
+    bde_zsh_extras="${BRITEDEVENV_PATH}/shells/zsh_extras.sh"
+
+    if [ -f ${bde_zsh_extras} ]
+    then
+        source ${bde_zsh_extras}
+    fi
+}
+
+load_britedevenv

@@ -1,0 +1,139 @@
+set previewer pistol
+set hidden true
+set color256 true
+set drawbox true
+set icons true
+set ignorecase true
+
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        image/*) sxiv "$f";;
+        application/pdf) zathura "$f";;
+        video/*) mpv "$f";;
+        *) xdg-open "$f";;
+    esac
+}}
+
+cmd mkdir ${{
+    printf "Directory Name: "
+    read ans
+    mkdir $ans
+}}
+
+cmd mkfile ${{
+    printf "File Name: "
+    read ans
+    $EDITOR $ans
+}}
+
+cmd chmod ${{
+    printf "Bits: "
+    read ans
+    for file in "$fx"
+    do
+        chmod $ans $file
+    done
+
+    lf -remote "send reload"
+}}
+
+cmd sudochmod ${{
+    printf "(sudo) Bits: "
+    read ans
+    for file in "$fx"
+    do
+        sudo chmod $ans $file
+    done
+
+    lf -remote "send reload"
+}}
+
+cmd sudomkfile ${{
+    printf "(sudo) File Name: "
+    read ans
+    sudo $EDITOR $ans
+}}
+
+cmd setwallpaper %cp "$f" ~/.config/wall.png && feh --bg-scale "$f"
+
+cmd fzfjump ${{
+    res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+    if [ -f "$res" ]; then
+        cmd="select"
+    elif [ -d "$res" ]; then
+        cmd="cd"
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd unarchive ${{
+    case "$f" in
+        *.zip) unzip "$f" ;;
+        *.tar*) tar -xvf "$f";;
+        *) echo "Unsupported Format";;
+    esac
+}}
+
+# Key Bindings
+
+# Remove some default bindings
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+map v
+map i
+map i invert
+map w
+
+# File Openers
+map ee $$EDITOR "$f"
+map v $view "$f"
+map u unarchive
+
+# Finder
+map f fzfjump
+
+map . set hidden!
+map dd delete
+map p paste
+map y copy
+map x cut
+map <enter> open
+map mf mkfile
+map md mkdir
+map mr sudomkfile
+map ch chmod
+map cr sudochmod
+map bg setwallpaper
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+map gh cd ~
+map gp cd ~/Pictures
+map gw cd ~/Pictures/Wallpapers
+
+map gd cd ~/Documents
+map gD cd ~/Downloads
+
+map gb cd ~/bin
+
+map gc. cd ~/code
+map gcg cd ~/code/Projects/Golang/src
+map gcp cd ~/code/Projects/Python
+map gcr cd ~/code/Projects/Rust
+
+map giws cd ~/code/IWS
+map gcfg cd ~/.config
+map ge cd /etc
+map g/ cd /
