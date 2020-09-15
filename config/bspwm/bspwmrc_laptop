@@ -1,0 +1,38 @@
+#! /usr/bin/bash
+
+# Workaround for: https://github.com/baskerville/bspwm/issues/52
+wmname LG3D
+export _JAVA_AWT_WM_NONPARENTING=1
+
+
+# Fix monitors
+xrandr --output DisplayPort-0 --primary --auto --output DisplayPort-1 --auto --left-of DisplayPort-0 --output HDMI-A-0 --auto --right-of DisplayPort-0
+
+
+sxhkd &
+picom -b
+copyq &
+
+# https://wiki.archlinux.org/index.php/GNOME/Keyring
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
+# Wallpaper and finally the status bar
+feh --bg-scale ~/.config/wall.png
+launchpolybar
+# Swallow parent process with the child
+pidof bspswallow || bspswallow &
+
+
+bspc config border_width        1
+bspc config window_gap          7
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focused_border_color \#444444
+bspc config normal_border_color \#080808
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+bspc rule -a Zathura state=tiled

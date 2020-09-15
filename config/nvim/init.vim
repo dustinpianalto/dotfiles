@@ -478,16 +478,16 @@ let g:go_auto_type_info = 1
 " }}}
 " vimwiki {{{
 let g:vimwiki_list = [
-    \{'path': '~/Notes', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Programming', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Programming/Golang', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Programming/Python', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Programming/Rust', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Britecore', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Arch', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/AWS', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Bible Study', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path': '~/Notes/Preparedness', 'syntax': 'markdown', 'ext': '.md'}]
+    \{'path': '~/notes', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Programming', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Programming/Golang', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Programming/Python', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Programming/Rust', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Britecore', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Arch', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/AWS', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Bible Study', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path': '~/notes/Preparedness', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
 " }}}
 
