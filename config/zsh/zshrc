@@ -2,7 +2,7 @@
 autoload -U +X compinit && compinit
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/code/Projects/Golang/bin:$HOME/go/go1.14.2/bin:$HOME/code/Bin:$HOME/.cargo/bin:$HOME/scripts:$HOME/.gem/ruby/2.7.0/gems:/usr/local/bin:$PATH
+export PATH=$HOME/code/Projects/Golang/bin:$HOME/go/go1.14.2/bin:$HOME/code/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/scripts:$HOME/.gem/ruby/2.7.0/gems:/usr/local/bin:$PATH
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

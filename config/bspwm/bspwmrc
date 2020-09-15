@@ -18,7 +18,7 @@ copyq &
 # export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
 # Wallpaper and finally the status bar
-feh --bg-scale ~/Pictures/wallpaper.jpg
+feh --bg-scale ~/.config/wall.png
 $HOME/.config/polybar/launchpolybar
 # Swallow parent process with the child
 pidof bspswallow || bspswallow &
