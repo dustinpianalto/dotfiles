@@ -59,23 +59,3 @@ source $HOME/.config/zsh/spaceship.zsh
 
 export OPENCV_LOG_LEVEL=ERROR
 
-# For BriteDevEnv...
-function load_britedevenv() {
-    # Activate direnv, which will pick up the `.envrc`.
-    eval "$(direnv hook zsh)"
-
-    # Since 'docker-compose' will now be working across multiple repositories,
-    # we'll export a ENV variable that it can read to figure out where all our
-    # repos are checked out at.
-    export REPO_DIR="~/code/IWS"
-
-    export BRITEDEVENV_PATH="/home/dustyp/code/IWS/BriteDevEnv"
-    bde_zsh_extras="${BRITEDEVENV_PATH}/shells/zsh_extras.sh"
-
-    if [ -f ${bde_zsh_extras} ]
-    then
-        source ${bde_zsh_extras}
-    fi
-}
-
-load_britedevenv
