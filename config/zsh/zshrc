@@ -59,3 +59,4 @@ source $HOME/.config/zsh/spaceship.zsh
 
 export OPENCV_LOG_LEVEL=ERROR
 
+eval "$(pyenv init -)"

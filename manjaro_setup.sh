@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Sy yay
-yay -Sy alacritty neovim python-neovim xclip nerd-fonts-dejavu-complete ttf-dejavu-sans-code zsh lsd
+yay -Sy alacritty neovim python-neovim xclip nerd-fonts-dejavu-complete ttf-dejavu-sans-code zsh lsd go rust
 mkdir ~/.config/alacritty
 ln -sv /home/dustyp/code/dotfiles/config/alacritty/alacritty_laptop.yml /home/dustyp/.config/alacritty/alacritty.yml
 mkdir ~/.config/nvim
